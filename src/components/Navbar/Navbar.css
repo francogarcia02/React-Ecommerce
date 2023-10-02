@@ -1,0 +1,25 @@
+.Navbar{
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: #1F1F26;
+  color: #F2BEA0;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+}
+
+.Navbar__obj{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+a:visited{
+  color: #FFD6D2;
+}
