@@ -9,15 +9,31 @@
   justify-content: start;
   align-items: center;
   padding: 20px;
+  position: relative;
 }
 
 .Navbar__obj{
   margin: 0;
 }
 
+.Navbar__obj_self{
+  margin: 0;
+  justify-self: end;
+}
+
+.Navbar__obj_register{
+  position: absolute;
+  right: 0px;
+  padding-right: 20px;
+}
+
+.Navbar__obj_login{
+  position: absolute;
+  right: 107.41px;
+}
+
 a{
   text-decoration: none;
-  color: #FFFFFF;
 }
 
 a:visited{
