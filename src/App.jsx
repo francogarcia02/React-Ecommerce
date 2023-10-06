@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
-import dataContent from './components/dataContent/dataContent'
+import DataContent from './components/DataContent/DataContent'
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <dataContent/>
-      <img src={logo} className="App-logo" alt="logo" />
+      <Navbar></Navbar>
+      <div className="contMenu">
+        <DataContent></DataContent>
+      </div>
     </div>
   );
 };

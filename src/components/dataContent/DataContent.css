@@ -1,0 +1,45 @@
+.contMenu{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 0.75%;
+  grid-row-gap: 1.5%;
+  max-width: 1200px;
+  margin: 1.5% auto;
+  text-align: left;
+  width: 100%;
+}
+.card{
+  border-radius: 5px;
+  width: 100%;
+  background-color: #1F1F26;
+  color: #F2BEA0;
+  position: relative;
+}
+
+.card__content{
+  margin: 10px;
+  margin-bottom:20px;
+}
+
+.card__content__item{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card__content__button{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 5px;
+  border-radius: 50px;
+  border: solid 1px #BD2516;
+}
+
+.card__content__button:hover{
+  background-color: #BD2516;
+  color: #FFD6D2;
+  border: solid 1px #FFD6D2;
+  transition: all 0.25s;
+}
