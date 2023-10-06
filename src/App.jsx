@@ -1,14 +1,14 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
 import DataContent from './components/DataContent/DataContent'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar></Navbar>
-      <div className="contMenu">
-        <DataContent></DataContent>
-      </div>
+      <DataContent></DataContent>
+      <Footer></Footer>
     </div>
   );
 };
