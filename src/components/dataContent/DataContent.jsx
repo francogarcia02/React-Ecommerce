@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 
 const DataContent = () => {
     const [productos, setProductos] = useState([])
-    console.log(productos)
-
     const pedirProductos = () => {
         return new Promise ((resolve, reject) => {
             resolve(data)
@@ -23,8 +21,9 @@ const DataContent = () => {
         <div className="contMenu">
             <h1 className="menu__title">Productos</h1>
             {productos.length > 0 && productos.map(prod => (
+                console.log(prod.img),
                 <div className="card">
-                    <img className="card__img" src="https://media.istockphoto.com/id/516816688/es/foto/lenta-cocina-casera-asado-de-carne-al-horno.jpg?b=1&s=612x612&w=0&k=20&c=P3I4IPPNU9yYd555XtDbrutezZAEcHLJ1BRWNW6K6iY=" alt=""/>
+                    <img className="card__img" src={process.env.PUBLIC_URL + prod.img} alt={prod.name}/>
                     <div className="card__content">
                         <h3 className="card__content__item" >{prod.name}</h3>
                         <h4 className="card__content__item" >${prod.price}</h4>
