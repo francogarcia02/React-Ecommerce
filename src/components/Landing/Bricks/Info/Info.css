@@ -1,0 +1,22 @@
+.presentacion{
+  padding: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  background-color: #162D4D;
+  color: #F2BEA0;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.presentacion__titulo{
+  margin: 0;
+}
+
+.presentacion__texto{
+  margin: 0;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
