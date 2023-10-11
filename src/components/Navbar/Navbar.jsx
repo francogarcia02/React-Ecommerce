@@ -23,10 +23,10 @@ const Navbar = () => {
                 <a className="Navbar__obj Navbar__obj_login" href="" >Iniciar sesion</a>
                 <a className="Navbar__obj Navbar__obj_register" href="" >Registrarse</a>
             </nav>
-            {menuOn == true &&
+            {menuOn === true &&
                 <DataContent></DataContent>
             }
-            {menuOn == false &&
+            {menuOn === false &&
                 <Landing></Landing>
             }
         </header>
