@@ -21,7 +21,6 @@ const DataContent = () => {
         <div className="contMenu">
             <h1 className="menu__title">Productos</h1>
             {productos.length > 0 && productos.map(prod => (
-                console.log(prod.img),
                 <div className="card">
                     <img className="card__img" src={process.env.PUBLIC_URL + prod.img} alt={prod.name}/>
                     <div className="card__content">
