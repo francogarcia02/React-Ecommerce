@@ -4,7 +4,7 @@
   background-color: #1F1F26;
   color: #F2BEA0;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   gap: 10px;
   justify-content: start;
   align-items: center;
@@ -18,9 +18,15 @@
   font-weight: 900;
 }
 
-.Navbar__menu{
+.Navbar__item{
   font-size: 1.5em;
   font-weight: 100;
+}
+
+.Navbar__item-use{
+  font-size: 1.5em;
+  font-weight: 100;
+  color: #EEEEEE;
 }
 
 .Navbar__obj{
