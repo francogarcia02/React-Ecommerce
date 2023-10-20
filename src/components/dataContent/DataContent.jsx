@@ -1,5 +1,5 @@
 import './DataContent.css';
-import pedirProductos from './pedirProductos';
+import { pedirProductos } from '../../helpers/pedirProductos';
 import { useState, useEffect } from 'react';
 import ItemList from './ItemList/ItemList'
 
