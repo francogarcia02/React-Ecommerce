@@ -16,7 +16,7 @@ function App() {
                 <Route path='/menu' element={<DataContent/>}/>
                 <Route path='/carrito' element={<Cart/>}/>
             </Routes>
-            <Footer></Footer>
+            <Footer/>
         </BrowserRouter>
     </div>
   );

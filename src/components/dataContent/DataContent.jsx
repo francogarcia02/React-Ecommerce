@@ -1,14 +1,11 @@
 import './DataContent.css';
-import data from "../../data/productos.json";
+import pedirProductos from './pedirProductos';
 import { useState, useEffect } from 'react';
+import ItemList from './ItemList/ItemList'
 
 const DataContent = () => {
     const [productos, setProductos] = useState([])
-    const pedirProductos = () => {
-        return new Promise ((resolve, reject) => {
-            resolve(data)
-        });
-    };
+
 
     useEffect(() => {
         pedirProductos()
@@ -18,19 +15,8 @@ const DataContent = () => {
     }, [])
 
     return(
-        <div className="contMenu">
-            <h1 className="menu__title">Productos</h1>
-            {productos.length > 0 && productos.map(prod => (
-                <div className="card">
-                    <img className="card__img" src={process.env.PUBLIC_URL + prod.img} alt={prod.name}/>
-                    <div className="card__content">
-                        <h3 className="card__content__item" >{prod.name}</h3>
-                        <h4 className="card__content__item" >${prod.price}</h4>
-                        <p className="card__content__item" >{prod.desc}</p>
-                        <button className="card__content__button" id="${id}">Añadir al pedido</button>
-                    </div>
-                </div>
-            ))}
+        <div>
+            <ItemList productos={productos}/>
         </div>
     );
 };
