@@ -15,6 +15,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Landing/>}/>
                 <Route path='/menu' element={<DataContent/>}/>
+                <Route path='/menu/:categoria' element={<DataContent/>}/>
                 <Route path="/item/:id" element={<ItemDetailConteiner/>}/>
                 <Route path='/carrito' element={<Cart/>}/>
             </Routes>

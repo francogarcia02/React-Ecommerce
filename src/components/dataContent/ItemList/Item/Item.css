@@ -20,8 +20,16 @@
 }
 
 .card__content__item{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.content__price{
+  font-weight: normal;
+}
+
+.content__title{
+  font-weight: bold;
 }
 
 .card__content__button{

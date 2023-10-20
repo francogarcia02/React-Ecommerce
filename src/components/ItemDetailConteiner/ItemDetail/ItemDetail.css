@@ -29,17 +29,17 @@
   height: 137px;
 }
 
-.card__content{
+.card__detail{
   margin: 10px;
   margin-bottom: 20px;
 }
 
-.card__content__item{
+.card__detail__item{
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.card__content__button{
+.card__detail__button{
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -50,7 +50,7 @@
   border: solid 1px #BD2516;
 }
 
-.card__content__button:hover{
+.card__detail__button:hover{
   background-color: #BD2516;
   color: #FFD6D2;
   border: solid 1px #FFD6D2;

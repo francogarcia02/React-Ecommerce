@@ -1,1 +1,11 @@
+.menu__categories{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  margin-left: 65px;
+  margin-top: 80px;
 
+}

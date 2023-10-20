@@ -44,7 +44,7 @@
     "name": "Televisor Samsung ITunes",
     "price": 30000,
     "id": 6,
-    "category": "smart tv",
+    "category": "smart-tv",
     "desc":"",
     "alt": "Ejemplo de tv samsung",
     "active": true
@@ -54,7 +54,7 @@
     "name": "Televisos OnePlus",
     "price": 1000,
     "id": 7,
-    "category": "smart tv",
+    "category": "smart-tv",
     "desc":"",
     "alt": "Ejemplo de tv",
     "active": true

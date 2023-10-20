@@ -5,7 +5,7 @@ const Navbar = () => {
 
     return(
         <div>
-            <header className="stopper">
+            <header>
                 <nav className="Navbar">
                     <Link to="/" className="Navbar__landing" >Ecommerce</Link>
                     <Link to="/menu" className="Navbar__item" >Menu</Link>
