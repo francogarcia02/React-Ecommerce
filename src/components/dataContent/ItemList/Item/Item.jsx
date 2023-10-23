@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Item = ({prod}) =>{
     return(
         <div key={prod.id} className="card">
-            <img className="card__img" src={process.env.PUBLIC_URL + prod.img} alt={prod.name}/>
+            <img className="card__img" src={prod.img} alt={prod.name}/>
             <div className="card__content">
                 <h3 className="card__content__item content__price" >${prod.price}</h3>
                 <h4 className="card__content__item content__title" >{prod.name}</h4>

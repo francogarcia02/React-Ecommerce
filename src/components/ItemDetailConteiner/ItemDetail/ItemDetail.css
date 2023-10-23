@@ -1,19 +1,20 @@
-.contMenu{
+.detail__contMenu{
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  max-width: 1200px;
+  max-width: 1000px;
   gap: 30px;
   margin: 1.5% auto;
   text-align: left;
   width: 100%;
   color: #F2BEA0;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .menu__title{
   margin: 0;
 }
 
-.card{
+.detail__card{
   display: flex;
   border-radius: 5px;
   width: 100%;
@@ -22,11 +23,11 @@
   position: relative;
 }
 
-.card__img{
+.card__detail__img{
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  width: 200px;
-  height: 137px;
+  width: 450px;
+  height: 100%;
 }
 
 .card__detail{
@@ -37,22 +38,32 @@
 .card__detail__item{
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-left: 20px;
 }
 
-.card__detail__button{
+.detail__price{
+  font-weight: normal;
+}
+
+.detail__title{
+  font-weight: bold;
+}
+
+.item__caract{
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.caract{
+  padding-left: 5px;
+}
+
+.detail__buttons{
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 5px;
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 5px;
-  border-radius: 50px;
-  border: solid 1px #BD2516;
+  bottom: 10px;
+  right: 10px;
 }
 
-.card__detail__button:hover{
-  background-color: #BD2516;
-  color: #FFD6D2;
-  border: solid 1px #FFD6D2;
-  transition: all 0.25s;
-}
