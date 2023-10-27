@@ -58,12 +58,55 @@
   padding-left: 5px;
 }
 
-.detail__buttons{
+.detail__ends{
   display: grid;
   grid-template-rows: repeat(2, auto);
-  gap: 5px;
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
 
+.detail__cantidades{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+
+}
+
+.detail__button{
+  padding: 15px;
+}
+
+.detail__button-carrito{
+  background-color: #3483fa;
+  border-radius: 5px;
+  border: solid 1px #3483fa;
+  color: #E8F1F8;
+}
+
+.detail__button-carrito:hover{
+  background-color: #E8F1F8;
+  color: #3483fa;
+  border: solid 1px #E8F1F8;
+  transition: all 0.25s;
+}
+
+
+
+.cantidades__button{
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #E8F1F8;
+  color: #3483fa;
+  border: solid 1px #E8F1F8;
+  width: 45px;
+  height: 45px;
+  align-self: center
+}
+
+.cantidades__button:hover{
+  background-color: #3483fa;
+  color: #E8F1F8;
+  border: solid 1px #3483fa;
+  transition: all 0.25s;
+}

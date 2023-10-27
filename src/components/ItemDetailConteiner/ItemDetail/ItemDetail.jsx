@@ -1,8 +1,22 @@
 import './ItemDetail.css';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../../context/CartContext';
 
 const ItemDetail = ({prod}) =>{
-    return(
+    const {carrito, agregarAlCarrito} = useContext(CartContext)
 
+    const [cantidad, setCantidad ] = useState(1)
+
+    const addCant = () =>{
+        setCantidad(cantidad + 1)
+    }
+
+    const lessCant = () =>{
+        cantidad > 1 && setCantidad(cantidad - 1)
+    }
+
+    console.log(carrito);
+    return(
         <div className="detail__contMenu">
             <h3 className="menu__title">Categoria: {prod.category}</h3>
             <div key={prod.id} className="detail__card">
@@ -18,9 +32,13 @@ const ItemDetail = ({prod}) =>{
                         <p className="caract">{prod.caract4}</p>
                     </div>
                 </div>
-                <div className="detail__buttons">
-                    <button className="detail__button-comprar">Comprar ahora</button>
-                    <button className="detail__button-carrito">Añadir al carrito</button>
+                <div className="detail__ends">
+                    <div className="detail__cantidades">
+                        <button className="cantidades__button" onClick={lessCant}>-</button>
+                        <p>{cantidad}</p>
+                        <button className="cantidades__button" onClick={addCant}>+</button>
+                    </div>
+                    <button onClick={()=>{agregarAlCarrito(prod, cantidad)}} className="detail__button  detail__button-carrito">Añadir al carrito</button>
                 </div>
 
             </div>
