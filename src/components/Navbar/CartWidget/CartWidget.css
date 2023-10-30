@@ -1,0 +1,14 @@
+.Cart__conteiner{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  gap: 5px;
+}
+
+.Cart__counter{
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+}

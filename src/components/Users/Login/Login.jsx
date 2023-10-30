@@ -9,18 +9,18 @@ const Login = () =>{
     }
 
     return(
-        <div className="container">
-            <form className="register__form" onSubmit={handleSubmit(enviar)}>
-                <h1 className="form__title">Iniciar sesion</h1>
-                <div className="form__subcont">
-                    <p className="subcont__title">Email:</p>
-                    <input className="subcont__input" type="text" placeholder="ingresar e-mail" {...register("e-mail")} />
+        <div className="container-login">
+            <form className="login__form" onSubmit={handleSubmit(enviar)}>
+                <h1 className="login-form__title">Iniciar sesion</h1>
+                <div className="login-form__subcont">
+                    <p className="login-subcont__title">Email:</p>
+                    <input className="login-subcont__input" type="text" placeholder="ingresar e-mail" {...register("e-mail")} />
                 </div>
-                <div className="form__subcont">
-                    <p className="subcont__title">Contraseña:</p>
-                    <input className="subcont__input" type="password" placeholder="ingresar contraseña" {...register("contraseña1")} />
+                <div className="login-form__subcont">
+                    <p className="login-subcont__title">Contraseña:</p>
+                    <input className="login-subcont__input" type="password" placeholder="ingresar contraseña" {...register("contraseña1")} />
                 </div>
-                <button className="form__button" type="submit">Entrar</button>
+                <button className="login-form__button" type="submit">Entrar</button>
             </form>
         </div>
     )

@@ -5,7 +5,7 @@ import Instruccions from './Bricks/Instruccions/Instruccions'
 
 const Landing = () =>{
     return(
-    <div>
+    <div className="Justifier">
         <Info></Info>
         <Location></Location>
         <Instruccions></Instruccions>

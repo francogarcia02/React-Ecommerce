@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
 
 const ItemDetail = ({prod}) =>{
-    const {carrito, agregarAlCarrito} = useContext(CartContext)
+    const {agregarAlCarrito} = useContext(CartContext)
 
     const [cantidad, setCantidad ] = useState(1)
 
@@ -15,7 +15,6 @@ const ItemDetail = ({prod}) =>{
         cantidad > 1 && setCantidad(cantidad - 1)
     }
 
-    console.log(carrito);
     return(
         <div className="detail__contMenu">
             <h3 className="menu__title">Categoria: {prod.category}</h3>

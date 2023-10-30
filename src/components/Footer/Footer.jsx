@@ -1,4 +1,5 @@
 import './Footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () =>{
     return(
@@ -15,13 +16,13 @@ const Footer = () =>{
             <div className="redes">
                 <h4 className="contacto__titulo" >Nuestras redes</h4>
                 <div className="redes__contenedor">
-                    <a href=""><img className="redes__logo" src="../../../assets/img/logos/instagram.png"/></a>
-                    <a href=""><img className="redes__logo" src="../../../assets/img/logos/facebook.png"/></a>
-                    <a href=""><img className="redes__logo" src="../../../assets/img/logos/twitter.png"/></a>
+                    <Link to=""><img className="redes__logo" src="../../../assets/img/logos/instagram.png" alt="instagram-icon"/></Link>
+                    <Link to=""><img className="redes__logo" src="../../../assets/img/logos/facebook.png" alt="facebook-icon"/></Link>
+                    <Link to=""><img className="redes__logo" src="../../../assets/img/logos/twitter.png" alt="twitter-icon"/></Link>
                 </div>
             </div>
             <div className="whatsapp">
-                <a href="https://wa.me/3512290552"><img class="whatsapp_logo" src="../../../assets/img/logos/whatsapp.png"/></a>
+                <a href="https://wa.me/3512290552"><img class="whatsapp_logo" src="../../../assets/img/logos/whatsapp.png" alt="wsp-icon"/></a>
             </div>
         </footer>
     )

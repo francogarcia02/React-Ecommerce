@@ -9,7 +9,6 @@ const DataContent = () => {
     const [productos, setProductos] = useState([])
     const [titulo, setTitulo] = useState("Productos")
     const categoria = useParams().categoria
-    console.log(categoria)
 
     useEffect(() => {
         pedirProductos()
@@ -27,7 +26,7 @@ const DataContent = () => {
     }, [categoria])
 
     return(
-        <div>
+        <div className="Justifier">
             <div className='menu__categories'>
                 <Link to='/menu'>Todos</Link>
                 <Link to='/menu/pc'>Computadoras</Link>

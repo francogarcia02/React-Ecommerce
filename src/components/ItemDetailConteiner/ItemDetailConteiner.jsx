@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
     },[id])
 
     return(
-        <div>
+        <div className="Justifier">
             {item && <ItemDetail prod={item}/>}
         </div>
     )

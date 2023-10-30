@@ -7,7 +7,7 @@ const ItemList = ({productos, titulo}) =>{
     <div className="contMenu">
         <h1 className="menu__title">{titulo}</h1>
         {productos && productos.map(prod => (
-            <Item prod={prod}/>
+            <Item key={prod.id} prod={prod}/>
         ))}
     </div>
     )
