@@ -1,11 +1,31 @@
-import { useForm } from 'react-hook-form'
-import './Register.css'
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import './Register.css';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../../firebase/config';
 
 const Register = () =>{
     const { register, handleSubmit } = useForm()
 
+    const [user, setUser] = useState("")
+
     const enviar = (data) =>{
-        console.log(data)
+        const usuarios = collection(db, 'usuarios');
+
+        addDoc(usuarios, data)
+            .then((doc) =>{
+                setUser(doc.id)
+            })
+    }
+
+    if(user){
+        return(
+            <div className='Justifier'>
+                <div className="Bienvenida">
+                    <h1>¡Gracias por registrarte!</h1>
+                </div>
+            </div>
+        )
     }
 
     return(

@@ -4,6 +4,7 @@ import Landing from './components/Landing/Landing';
 import DataContent from './components/DataContent/DataContent';
 import ItemDetailConteiner from './components/ItemDetailConteiner/ItemDetailConteiner';
 import Cart from './components/Cart/Cart';
+import CheckOut from './components/CheckOut/CheckOut';
 import Register from './components/Users/Register/Register';
 import Login from './components/Users/Login/Login';
 import Footer from './components/Footer/Footer';
@@ -20,15 +21,15 @@ function App() {
             <BrowserRouter>
                 <Navbar/>
                 <Routes>
-                    <Route path='/' element={<Landing/>}/>
+                    <Route path='/' element={<><Landing/><Footer/></>}/>
                     <Route path='/menu' element={<DataContent/>}/>
                     <Route path='/menu/:categoria' element={<DataContent/>}/>
                     <Route path="/item/:id" element={<ItemDetailConteiner/>}/>
                     <Route path='/carrito' element={<Cart/>}/>
+                    <Route path='/checkout' element={<CheckOut/>}/>
                     <Route path='/register' element={<Register/>}/>
                     <Route path='/login' element={<Login/>}/>
                 </Routes>
-                <Footer/>
             </BrowserRouter>
         </CartProvider>
   );
