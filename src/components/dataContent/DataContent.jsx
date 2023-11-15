@@ -1,9 +1,9 @@
 import './DataContent.css';
-import { pedirProductos } from '../../helpers/pedirProductos';
-import { toCapital } from '../../helpers/toCapital';
 import { useState, useEffect } from 'react';
-import ItemList from './ItemList/ItemList'
-import { useParams, Link } from 'react-router-dom'
+import ItemList from './ItemList/ItemList';
+import { useParams, Link } from 'react-router-dom';
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from '../../firebase/config'
 
 const DataContent = () => {
     const [productos, setProductos] = useState([])
@@ -11,18 +11,26 @@ const DataContent = () => {
     const categoria = useParams().categoria
 
     useEffect(() => {
-        pedirProductos()
-            .then((res) => {
-                if(categoria){
-                    setProductos( res.filter((prod)=>prod.category === categoria ))
-                    setTitulo(toCapital(categoria))
-                }
-                else{
-                    setProductos(res)
-                    setTitulo('Productos')
-                }
+        const productosDB = collection(db, 'productos');
 
+        const q = categoria ? query(productosDB, where('category','==',categoria)) : productosDB
+
+        getDocs(q)
+            .then((resp) => {
+                setProductos(
+                    resp.docs.map(prod=>{
+                        return{...prod.data(), id: prod.id}
+                    })
+                )
             })
+
+        if (categoria){
+            setTitulo(categoria);
+        }
+        else{
+            setTitulo('Productos')
+        }
+
     }, [categoria])
 
     return(
