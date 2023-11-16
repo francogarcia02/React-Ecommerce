@@ -4,24 +4,15 @@ import './Register.css';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../../firebase/config';
 import { control } from '../../../helpers/check_register.js';
+import { usuariosDB } from '../../../helpers/get_users.js';
 
 const Register = () =>{
     const { register, handleSubmit } = useForm()
     const [passClass, setPassClass] = useState('subcont__input')
-    const [usuariosDB, setUsuariosDB] = useState([])
     const [user, setUser] = useState("")
     const [contErrores, setContErrores] = useState(<></>)
     const [errores, setErrores] = useState([])
     const usuarios = collection(db, 'usuarios');
-
-    getDocs(usuarios)
-        .then((resp)=>{
-            setUsuariosDB(
-                resp.docs.map(us=>{
-                        return{...us.data()}
-                    })
-            )
-        })
 
     const enviar = (data) =>{
         const resp = control(data, usuariosDB);
@@ -29,6 +20,7 @@ const Register = () =>{
             addDoc(usuarios, data)
                 .then((doc) =>{
                     setUser(doc.id)
+                    localStorage.setItem('account',{...data, id: doc.id})
                 })
         }
         else{
