@@ -1,21 +1,35 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import './Register.css';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../../firebase/config';
+import { control } from '../../../helpers/check_register.js'
 
 const Register = () =>{
     const { register, handleSubmit } = useForm()
 
+    const [usuariosDB, setUsuariosDB] = useState([])
     const [user, setUser] = useState("")
+    const usuarios = collection(db, 'usuarios');
+
+    getDocs(usuarios)
+        .then((resp)=>{
+            setUsuariosDB(
+                resp.docs.map(us=>{
+                        return{...us.data()}
+                    })
+            )
+        })
 
     const enviar = (data) =>{
-        const usuarios = collection(db, 'usuarios');
-
-        addDoc(usuarios, data)
-            .then((doc) =>{
-                setUser(doc.id)
-            })
+        const resp = control(data, usuariosDB);
+        console.log(resp)
+        if(resp == true){
+            addDoc(usuarios, data)
+                .then((doc) =>{
+                    setUser(doc.id)
+                })
+        }
     }
 
     if(user){
@@ -46,7 +60,7 @@ const Register = () =>{
                 </div>
                 <div className="form__subcont">
                     <p className="subcont__title">Email:</p>
-                    <input className="subcont__input" type="text" placeholder="ingresar e-mail" {...register("e-mail")} />
+                    <input className="subcont__input" type="text" placeholder="ingresar e-mail" {...register("email")} />
                 </div>
                 <div className="form__subcont">
                     <p className="subcont__title">Contraseña:</p>
