@@ -1,8 +1,8 @@
 .container{
   margin: 0 auto;
-  margin-top: 160px;
-  margin-bottom: 80px;
+  margin-top: 140px;
   max-width: 700px;
+  position: relative;
 }
 
 .register__form{
@@ -44,7 +44,7 @@
 .subcont__input{
   padding: 5px;
   border-radius: 5px;
-  border: none;
+  border: solid 1px;
 }
 
 .subcont__title{
@@ -61,4 +61,26 @@
   padding: 5px;
 
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* Errores */
+
+.password-error{
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px red;
+}
+
+.errores{
+  position: absolute;
+  top: 0px;
+  right: -250px;
+  color: white;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.errores__title{
+  margin: 0;
 }

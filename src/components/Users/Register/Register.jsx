@@ -3,13 +3,15 @@ import { useState } from 'react';
 import './Register.css';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../../firebase/config';
-import { control } from '../../../helpers/check_register.js'
+import { control } from '../../../helpers/check_register.js';
 
 const Register = () =>{
     const { register, handleSubmit } = useForm()
-
+    const [passClass, setPassClass] = useState('subcont__input')
     const [usuariosDB, setUsuariosDB] = useState([])
     const [user, setUser] = useState("")
+    const [contErrores, setContErrores] = useState(<></>)
+    const [errores, setErrores] = useState([])
     const usuarios = collection(db, 'usuarios');
 
     getDocs(usuarios)
@@ -23,12 +25,20 @@ const Register = () =>{
 
     const enviar = (data) =>{
         const resp = control(data, usuariosDB);
-        console.log(resp)
-        if(resp == true){
+        if(resp === true){
             addDoc(usuarios, data)
                 .then((doc) =>{
                     setUser(doc.id)
                 })
+        }
+        else{
+            setPassClass('password-error')
+            setContErrores( <div className="errores">
+                                <h3 className="errores__title">Error</h3>
+                                {resp.map((text)=>{
+                                    return(<h5>*{text}</h5>)
+                                })}
+                            </div>)
         }
     }
 
@@ -44,6 +54,7 @@ const Register = () =>{
 
     return(
         <div className="container">
+            {contErrores}
             <form className="register__form" onSubmit={handleSubmit(enviar)}>
                 <h1 className="form__title">Registro</h1>
                 <div className="form__subcont">
@@ -64,11 +75,11 @@ const Register = () =>{
                 </div>
                 <div className="form__subcont">
                     <p className="subcont__title">Contraseña:</p>
-                    <input className="subcont__input" type="password" placeholder="ingresar contraseña" {...register("contraseña1")} />
+                    <input className={passClass} type="password" placeholder="ingresar contraseña" {...register("contraseña1")} />
                 </div>
                 <div className="form__subcont">
                     <p className="subcont__title">Repetir contraseña:</p>
-                    <input className="subcont__input" type="password" placeholder="repetir contraseña" {...register("contraseña2")} />
+                    <input className={passClass} type="password" placeholder="repetir contraseña" {...register("contraseña2")} />
                 </div>
                 <button className="form__button" type="submit">Enviar</button>
             </form>
