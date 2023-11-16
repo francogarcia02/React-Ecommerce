@@ -1,5 +1,5 @@
 export const control = (data, usuarios)=>{
-    const { nombre, apellido, telefono, email, contraseña1, contraseña2 } = data;
+    const { email, contraseña1, contraseña2 } = data;
     const tipos = [];
     usuarios.map(user =>{
         if(email === user.email){

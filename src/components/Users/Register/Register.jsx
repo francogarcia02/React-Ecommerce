@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import './Register.css';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../../firebase/config';
 import { control } from '../../../helpers/check_register.js';
 import { usuariosDB } from '../../../helpers/get_users.js';
@@ -11,7 +11,6 @@ const Register = () =>{
     const [passClass, setPassClass] = useState('subcont__input')
     const [user, setUser] = useState("")
     const [contErrores, setContErrores] = useState(<></>)
-    const [errores, setErrores] = useState([])
     const usuarios = collection(db, 'usuarios');
 
     const enviar = (data) =>{
@@ -20,7 +19,8 @@ const Register = () =>{
             addDoc(usuarios, data)
                 .then((doc) =>{
                     setUser(doc.id)
-                    localStorage.setItem('account',{...data, id: doc.id})
+                    const user = JSON.stringify({...data, id: doc.id})
+                    localStorage.setItem('account',user)
                 })
         }
         else{
