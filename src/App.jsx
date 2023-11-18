@@ -10,6 +10,7 @@ import Login from './components/Users/Login/Login';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { UserProvider } from './context/UserContext';
 
 
 
@@ -18,6 +19,7 @@ function App() {
 
     return (
         <CartProvider>
+        <UserProvider>
             <BrowserRouter>
                 <Navbar/>
                 <Routes>
@@ -31,6 +33,7 @@ function App() {
                     <Route path='/login' element={<Login/>}/>
                 </Routes>
             </BrowserRouter>
+        </UserProvider>
         </CartProvider>
   );
 };

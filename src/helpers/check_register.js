@@ -1,7 +1,7 @@
 export const control = (data, usuarios)=>{
     const { email, contraseña1, contraseña2 } = data;
     const tipos = [];
-    usuarios.map(user =>{
+    usuarios.forEach(user =>{
         if(email === user.email){
             tipos.push('El mail ingresado ya esta en uso');
         }

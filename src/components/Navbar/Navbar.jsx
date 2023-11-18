@@ -1,9 +1,15 @@
 import './Navbar.css';
-import { Link } from 'react-router-dom'
-import CartWidget from './CartWidget/CartWidget'
+import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget/CartWidget';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const Navbar = () => {
-    const user = JSON.parse(localStorage.getItem('account'));
+
+    const {user, userExist} = useContext(UserContext)
+
+    const exist = userExist()
+
 
     return(
         <div>
@@ -12,7 +18,7 @@ const Navbar = () => {
                     <Link to="/" className="Navbar__landing" >Ecommerce</Link>
                     <Link to="/menu" className="Navbar__item" >Menu</Link>
                     <CartWidget/>
-                    {(user) ?
+                    {(exist) ?
                     <Link to="/" className="Navbar__obj Navbar__obj_register">{user.nombre} {user.apellido}</Link>
                     :
                     <>

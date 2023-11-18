@@ -20,11 +20,15 @@
 .Navbar__landing{
   font-size: 1.5em;
   font-weight: 900;
+  color: #F2BEA0;
 }
 
 .Navbar__item{
   font-size: 1.5em;
   font-weight: 100;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: #F2BEA0;
 }
 
 .Navbar__item-use{
@@ -41,23 +45,18 @@
   position: absolute;
   right: 0px;
   padding-right: 20px;
+  color: #F2BEA0;
 }
 
 .Navbar__obj_login{
   position: absolute;
   right: 107.41px;
+  color: #F2BEA0;
 }
 
 a{
   text-decoration: none;
 }
 
-a:visited{
-  color: #F2BEA0;
-}
 
-button{
-  background-color: transparent;
-  color: #F2BEA0;
-  border: none;
-}
+

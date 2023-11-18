@@ -5,22 +5,25 @@ import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../../firebase/config';
 import { control } from '../../../helpers/check_register.js';
 import { usuariosDB } from '../../../helpers/get_users.js';
+import { useContext } from 'react';
+import { UserContext } from '../../../context/UserContext';
 
 const Register = () =>{
     const { register, handleSubmit } = useForm()
     const [passClass, setPassClass] = useState('subcont__input')
-    const [user, setUser] = useState("")
     const [contErrores, setContErrores] = useState(<></>)
     const usuarios = collection(db, 'usuarios');
+    const {userExist, log_user} = useContext(UserContext)
+
+    const exist = userExist()
 
     const enviar = (data) =>{
         const resp = control(data, usuariosDB);
         if(resp === true){
             addDoc(usuarios, data)
                 .then((doc) =>{
-                    setUser(doc.id)
-                    const user = JSON.stringify({...data, id: doc.id})
-                    localStorage.setItem('account',user)
+                    const datos = {email: data.email, nombre: data.nombre, apellido: data.apellido, telefono: data.apellido}
+                    log_user(datos)
                 })
         }
         else{
@@ -34,7 +37,7 @@ const Register = () =>{
         }
     }
 
-    if(user){
+    if(exist){
         return(
             <div className='Justifier'>
                 <div className="Bienvenida">
