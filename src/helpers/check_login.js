@@ -5,7 +5,6 @@ export const checker = (usuarios, usuario) =>{
         if(us.email === email){
             if(us.contraseña1 === contraseña){
                 bandera = {email: us.email, nombre: us.nombre, apellido: us.apellido, telefono: us.telefono}
-
             }
         }
 
