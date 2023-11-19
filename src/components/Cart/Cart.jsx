@@ -12,6 +12,8 @@ const Cart = () =>{
 
     const exist = userExist()
 
+    console.log(exist)
+
     const handleVaciar = () =>{
         vaciarCarrito();
     }
@@ -33,7 +35,7 @@ const Cart = () =>{
                             ?
                             <Link to='/checkout' className="Total__button">Comprar</Link>
                             :
-                            <Link to='/checkout' className="Total__button">Comprar</Link>
+                            <Link to='/login' className="Total__button">Comprar</Link>
                             }
                         </div>
 

@@ -16,7 +16,7 @@ const Navbar = () => {
             <header>
                 <nav className="Navbar">
                     <Link to="/" className="Navbar__landing" >Ecommerce</Link>
-                    <Link to="/menu" className="Navbar__item" >Menu</Link>
+                    <Link to="/menu" className="Navbar__item" >Catalogo</Link>
                     <CartWidget/>
                     {(exist) ?
                     <Link to="/" className="Navbar__obj Navbar__obj_register">{user.nombre} {user.apellido}</Link>

@@ -1,13 +1,16 @@
 .presentacion{
   padding: 80px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
   justify-items: center;
   background-color: #162D4D;
   color: #F2BEA0;
-  gap: 10px;
+  gap: 20px;
   justify-items: center;
   align-items: center;
+
+  margin: 20px;
+  border-radius: 10px;
 }
 
 .presentacion__titulo{
@@ -17,6 +20,6 @@
 .presentacion__texto{
   margin: 0;
   text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
