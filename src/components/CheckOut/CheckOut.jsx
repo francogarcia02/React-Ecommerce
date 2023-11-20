@@ -44,7 +44,7 @@ const CheckOut = () =>{
                 <h4>A nombre de: {user.nombre} {user.apellido}</h4>
             </div>
             <div className="CheckOut__ends">
-                <Link className="ends__button-cancel" to="/">Cancelar</Link>
+                <Link className="ends__button-cancel" to="/carrito">Cancelar</Link>
                 <button className="ends__button-confirm" onClick={comprar}>Confirmar</button>
             </div>
         </div>

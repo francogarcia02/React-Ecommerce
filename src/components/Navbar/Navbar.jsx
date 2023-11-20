@@ -15,7 +15,7 @@ const Navbar = () => {
         <div>
             <header>
                 <nav className="Navbar">
-                    <Link to="/" className="Navbar__landing" >Ecommerce</Link>
+                    <Link to="/" className="Navbar__landing">Home</Link>
                     <Link to="/menu" className="Navbar__item" >Catalogo</Link>
                     <CartWidget/>
                     {(exist) ?
