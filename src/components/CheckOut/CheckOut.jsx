@@ -40,7 +40,7 @@ const CheckOut = () =>{
         <div className='CheckOut'>
             <h1 className="CheckOut__title">¿Desea confirmar la compra?</h1>
             <div className="CheckOut__data">
-                <h4>Precio a pagar: {precioTotal()}</h4>
+                <h4>Precio a pagar: ${precioTotal()}</h4>
                 <h4>A nombre de: {user.nombre} {user.apellido}</h4>
             </div>
             <div className="CheckOut__ends">

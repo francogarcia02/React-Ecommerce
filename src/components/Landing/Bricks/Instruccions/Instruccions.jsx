@@ -3,7 +3,7 @@ import './Instruccions.css'
 const Instruccions = () =>{
     return(
         <div class="funcionalidad">
-            <h2 class="funcionalidad__item">Prodecimiento para ordenar tu menu ideal</h2>
+            <h2 class="funcionalidad__item">¿Como hago mi pedido?</h2>
             <div class="funcionalidad__row">
                 <div>
                     <h4 class="funcionalidad__row__item">Primer paso</h4>
